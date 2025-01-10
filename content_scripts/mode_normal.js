@@ -92,10 +92,10 @@ const NormalModeCommands = {
     Scroller.scrollTo("x", "max");
   },
   scrollUp(count) {
-    Scroller.scrollBy("y", -1 * Settings.get("scrollStepSize") * count);
+    Scroller.scrollBy("y", -1 * Settings.get("scrollStepSize") * count, 10 * count);
   },
   scrollDown(count) {
-    Scroller.scrollBy("y", Settings.get("scrollStepSize") * count);
+    Scroller.scrollBy("y", Settings.get("scrollStepSize") * count, 10 * count);
   },
   scrollPageUp(count) {
     Scroller.scrollBy("y", "viewSize", -1.2 * count);
