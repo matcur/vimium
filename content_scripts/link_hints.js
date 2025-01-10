@@ -554,10 +554,57 @@ class LinkHintsMode {
     } else if ((event.key === " ") && this.markerMatcher.shouldRotateHints(event)) {
       HintCoordinator.sendMessage("rotateHints");
     } else {
+      const map = {
+        'й': 'q',
+        'ц': 'w',
+        'у': 'e',
+        'к': 'r',
+        'е': 't',
+        'н': 'y',
+        'г': 'u',
+        'ш': 'i',
+        'щ': 'o',
+        'з': 'p',
+        'х': '[',
+        'Х': '{',
+        'ъ': ']',
+        'Ъ': '}',
+        '/': '|',
+        'ё': '`',
+        'Ё': '~',
+        'ф': 'a',
+        'ы': 's',
+        'в': 'd',
+        'а': 'f',
+        'п': 'g',
+        'р': 'h',
+        'о': 'j',
+        'л': 'k',
+        'д': 'l',
+        'ж': ';',
+        'Ж': ':',
+        'э': "'",
+        'Э': '"',
+        'я': 'z',
+        'ч': 'x',
+        'с': 'c',
+        'м': 'v',
+        'и': 'b',
+        'т': 'n',
+        'ь': 'm',
+        'б': ',',
+        'Б': '<',
+        'ю': '.',
+        'Ю': '>',
+      }
+
       if (!event.repeat) {
         let keyChar = Settings.get("filterLinkHints")
           ? KeyboardUtils.getKeyChar(event)
           : KeyboardUtils.getKeyChar(event).toLowerCase();
+        if (map[keyChar]) {
+          keyChar = map[keyChar]
+        }
         if (keyChar) {
           if (keyChar === "space") {
             keyChar = " ";
