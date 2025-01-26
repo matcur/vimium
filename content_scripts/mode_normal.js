@@ -322,6 +322,7 @@ const NormalModeCommands = {
 if (typeof LinkHints !== "undefined") {
   Object.assign(NormalModeCommands, {
     "LinkHints.activateMode": LinkHints.activateMode.bind(LinkHints),
+    "LinkHints.activateDoubleMode": LinkHints.activateDoubleMode.bind(LinkHints),
     "LinkHints.activateModeToOpenInNewTab": LinkHints.activateModeToOpenInNewTab.bind(LinkHints),
     "LinkHints.activateModeToOpenInNewForegroundTab": LinkHints.activateModeToOpenInNewForegroundTab
       .bind(LinkHints),

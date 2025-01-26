@@ -306,6 +306,15 @@ const HintCoordinator = {
 };
 
 const LinkHints = {
+  activateDoubleMode(count, {mode, registryEntry}) {
+    this.activateMode(count, {mode, registryEntry})
+    HintCoordinator.onExit.push(success => {
+      if (!success) {
+        return
+      }
+      this.activateMode(count, {mode, registryEntry})
+    })
+  },
   activateMode(count, { mode, registryEntry }) {
     if (count == null) count = 1;
     if (mode == null) mode = OPEN_IN_CURRENT_TAB;
